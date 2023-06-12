@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Multi-room Chat</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Let's Chat</h1>
+    </header>
+    <div id="chatContainer" class="hidden">
+        <div id="sidebar">
+            <div id="nicknameContainer">
+                <label for="nickname">Enter your nickname:</label>
+                <input type="text" id="nickname"/>
+                <button id="submitNickname">Submit</button>
+            </div>
+            <h3>Rooms:</h3>
+            <ul id="roomList"></ul>
+            <div id="createRoomContainer">
+                <input type="text" id="newRoomName" placeholder="Room name" />
+                <input type="password" id="newRoomPassword" placeholder="Password (optional)" />
+                <button id="createRoom">Create Room</button>
+            </div>
+        </div>
+        <div id="main">
+            <h2 id="currentRoom"></h2>
+            <div id="deleteRoomContainer" class="hidden">
+                <button id="deleteRoom">Delete Room</button>
+            </div>
+            <div id="chatlog"></div>
+            <div id="userListContainer">
+                <h4>Users in room:</h4>
+                <ul id="userList"></ul>
+            </div>
+                <div id="messageInputContainer">
+                    <input type="text" id="message_input" placeholder="Type your message" />
+                    <select id="recipientSelect">
+                        <option value="all">All users</option>
+                    </select>
+                    <button id="sendMessage">Send</button>
+                </div>
+        </div>
+    </div>
+</body>
+</html>
